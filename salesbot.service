@@ -1,0 +1,15 @@
+[Unit]
+Description=Concept Stores Telegram Sales Bot
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/sales_bot
+ExecStart=/root/sales_bot/venv/bin/python bot.py
+Restart=always
+RestartSec=10
+EnvironmentFile=/root/sales_bot/.env
+
+[Install]
+WantedBy=multi-user.target
